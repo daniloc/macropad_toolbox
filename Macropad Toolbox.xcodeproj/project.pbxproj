@@ -1,0 +1,628 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FFBF849276E6E3700918BE8 /* Macropad_ToolboxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF848276E6E3700918BE8 /* Macropad_ToolboxApp.swift */; };
+		1FFBF84B276E6E3700918BE8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF84A276E6E3700918BE8 /* ContentView.swift */; };
+		1FFBF84D276E6E3800918BE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FFBF84C276E6E3800918BE8 /* Assets.xcassets */; };
+		1FFBF850276E6E3800918BE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FFBF84F276E6E3800918BE8 /* Preview Assets.xcassets */; };
+		1FFBF852276E6E3800918BE8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF851276E6E3800918BE8 /* Persistence.swift */; };
+		1FFBF855276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF853276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodeld */; };
+		1FFBF860276E6E3800918BE8 /* Macropad_ToolboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF85F276E6E3800918BE8 /* Macropad_ToolboxTests.swift */; };
+		1FFBF86A276E6E3800918BE8 /* Macropad_ToolboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF869276E6E3800918BE8 /* Macropad_ToolboxUITests.swift */; };
+		1FFBF86C276E6E3800918BE8 /* Macropad_ToolboxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF86B276E6E3800918BE8 /* Macropad_ToolboxUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FFBF85C276E6E3800918BE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FFBF83D276E6E3700918BE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FFBF844276E6E3700918BE8;
+			remoteInfo = "Macropad Toolbox";
+		};
+		1FFBF866276E6E3800918BE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FFBF83D276E6E3700918BE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FFBF844276E6E3700918BE8;
+			remoteInfo = "Macropad Toolbox";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1FFBF845276E6E3700918BE8 /* Macropad Toolbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macropad Toolbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FFBF848276E6E3700918BE8 /* Macropad_ToolboxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macropad_ToolboxApp.swift; sourceTree = "<group>"; };
+		1FFBF84A276E6E3700918BE8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1FFBF84C276E6E3800918BE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1FFBF84F276E6E3800918BE8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1FFBF851276E6E3800918BE8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		1FFBF854276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Macropad_Toolbox.xcdatamodel; sourceTree = "<group>"; };
+		1FFBF856276E6E3800918BE8 /* Macropad_Toolbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Macropad_Toolbox.entitlements; sourceTree = "<group>"; };
+		1FFBF85B276E6E3800918BE8 /* Macropad ToolboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Macropad ToolboxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FFBF85F276E6E3800918BE8 /* Macropad_ToolboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macropad_ToolboxTests.swift; sourceTree = "<group>"; };
+		1FFBF865276E6E3800918BE8 /* Macropad ToolboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Macropad ToolboxUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FFBF869276E6E3800918BE8 /* Macropad_ToolboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macropad_ToolboxUITests.swift; sourceTree = "<group>"; };
+		1FFBF86B276E6E3800918BE8 /* Macropad_ToolboxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macropad_ToolboxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FFBF842276E6E3700918BE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FFBF858276E6E3800918BE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FFBF862276E6E3800918BE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FFBF83C276E6E3700918BE8 = {
+			isa = PBXGroup;
+			children = (
+				1FFBF847276E6E3700918BE8 /* Macropad Toolbox */,
+				1FFBF85E276E6E3800918BE8 /* Macropad ToolboxTests */,
+				1FFBF868276E6E3800918BE8 /* Macropad ToolboxUITests */,
+				1FFBF846276E6E3700918BE8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1FFBF846276E6E3700918BE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FFBF845276E6E3700918BE8 /* Macropad Toolbox.app */,
+				1FFBF85B276E6E3800918BE8 /* Macropad ToolboxTests.xctest */,
+				1FFBF865276E6E3800918BE8 /* Macropad ToolboxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FFBF847276E6E3700918BE8 /* Macropad Toolbox */ = {
+			isa = PBXGroup;
+			children = (
+				1FFBF848276E6E3700918BE8 /* Macropad_ToolboxApp.swift */,
+				1FFBF84A276E6E3700918BE8 /* ContentView.swift */,
+				1FFBF84C276E6E3800918BE8 /* Assets.xcassets */,
+				1FFBF851276E6E3800918BE8 /* Persistence.swift */,
+				1FFBF856276E6E3800918BE8 /* Macropad_Toolbox.entitlements */,
+				1FFBF853276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodeld */,
+				1FFBF84E276E6E3800918BE8 /* Preview Content */,
+			);
+			path = "Macropad Toolbox";
+			sourceTree = "<group>";
+		};
+		1FFBF84E276E6E3800918BE8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1FFBF84F276E6E3800918BE8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1FFBF85E276E6E3800918BE8 /* Macropad ToolboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FFBF85F276E6E3800918BE8 /* Macropad_ToolboxTests.swift */,
+			);
+			path = "Macropad ToolboxTests";
+			sourceTree = "<group>";
+		};
+		1FFBF868276E6E3800918BE8 /* Macropad ToolboxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1FFBF869276E6E3800918BE8 /* Macropad_ToolboxUITests.swift */,
+				1FFBF86B276E6E3800918BE8 /* Macropad_ToolboxUITestsLaunchTests.swift */,
+			);
+			path = "Macropad ToolboxUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FFBF844276E6E3700918BE8 /* Macropad Toolbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FFBF86F276E6E3800918BE8 /* Build configuration list for PBXNativeTarget "Macropad Toolbox" */;
+			buildPhases = (
+				1FFBF841276E6E3700918BE8 /* Sources */,
+				1FFBF842276E6E3700918BE8 /* Frameworks */,
+				1FFBF843276E6E3700918BE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Macropad Toolbox";
+			productName = "Macropad Toolbox";
+			productReference = 1FFBF845276E6E3700918BE8 /* Macropad Toolbox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1FFBF85A276E6E3800918BE8 /* Macropad ToolboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FFBF872276E6E3800918BE8 /* Build configuration list for PBXNativeTarget "Macropad ToolboxTests" */;
+			buildPhases = (
+				1FFBF857276E6E3800918BE8 /* Sources */,
+				1FFBF858276E6E3800918BE8 /* Frameworks */,
+				1FFBF859276E6E3800918BE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FFBF85D276E6E3800918BE8 /* PBXTargetDependency */,
+			);
+			name = "Macropad ToolboxTests";
+			productName = "Macropad ToolboxTests";
+			productReference = 1FFBF85B276E6E3800918BE8 /* Macropad ToolboxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1FFBF864276E6E3800918BE8 /* Macropad ToolboxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FFBF875276E6E3800918BE8 /* Build configuration list for PBXNativeTarget "Macropad ToolboxUITests" */;
+			buildPhases = (
+				1FFBF861276E6E3800918BE8 /* Sources */,
+				1FFBF862276E6E3800918BE8 /* Frameworks */,
+				1FFBF863276E6E3800918BE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FFBF867276E6E3800918BE8 /* PBXTargetDependency */,
+			);
+			name = "Macropad ToolboxUITests";
+			productName = "Macropad ToolboxUITests";
+			productReference = 1FFBF865276E6E3800918BE8 /* Macropad ToolboxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FFBF83D276E6E3700918BE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					1FFBF844276E6E3700918BE8 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					1FFBF85A276E6E3800918BE8 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 1FFBF844276E6E3700918BE8;
+					};
+					1FFBF864276E6E3800918BE8 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 1FFBF844276E6E3700918BE8;
+					};
+				};
+			};
+			buildConfigurationList = 1FFBF840276E6E3700918BE8 /* Build configuration list for PBXProject "Macropad Toolbox" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1FFBF83C276E6E3700918BE8;
+			productRefGroup = 1FFBF846276E6E3700918BE8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FFBF844276E6E3700918BE8 /* Macropad Toolbox */,
+				1FFBF85A276E6E3800918BE8 /* Macropad ToolboxTests */,
+				1FFBF864276E6E3800918BE8 /* Macropad ToolboxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FFBF843276E6E3700918BE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FFBF850276E6E3800918BE8 /* Preview Assets.xcassets in Resources */,
+				1FFBF84D276E6E3800918BE8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FFBF859276E6E3800918BE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FFBF863276E6E3800918BE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FFBF841276E6E3700918BE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FFBF852276E6E3800918BE8 /* Persistence.swift in Sources */,
+				1FFBF84B276E6E3700918BE8 /* ContentView.swift in Sources */,
+				1FFBF855276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodeld in Sources */,
+				1FFBF849276E6E3700918BE8 /* Macropad_ToolboxApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FFBF857276E6E3800918BE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FFBF860276E6E3800918BE8 /* Macropad_ToolboxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FFBF861276E6E3800918BE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FFBF86A276E6E3800918BE8 /* Macropad_ToolboxUITests.swift in Sources */,
+				1FFBF86C276E6E3800918BE8 /* Macropad_ToolboxUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FFBF85D276E6E3800918BE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FFBF844276E6E3700918BE8 /* Macropad Toolbox */;
+			targetProxy = 1FFBF85C276E6E3800918BE8 /* PBXContainerItemProxy */;
+		};
+		1FFBF867276E6E3800918BE8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FFBF844276E6E3700918BE8 /* Macropad Toolbox */;
+			targetProxy = 1FFBF866276E6E3800918BE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1FFBF86D276E6E3800918BE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1FFBF86E276E6E3800918BE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		1FFBF870276E6E3800918BE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Macropad Toolbox/Macropad_Toolbox.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Macropad Toolbox/Preview Content\"";
+				DEVELOPMENT_TEAM = 2BQHEV6DNR;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "danilocampos.Macropad-Toolbox";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1FFBF871276E6E3800918BE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Macropad Toolbox/Macropad_Toolbox.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Macropad Toolbox/Preview Content\"";
+				DEVELOPMENT_TEAM = 2BQHEV6DNR;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "danilocampos.Macropad-Toolbox";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1FFBF873276E6E3800918BE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BQHEV6DNR;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "danilocampos.Macropad-ToolboxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Macropad Toolbox.app/Contents/MacOS/Macropad Toolbox";
+			};
+			name = Debug;
+		};
+		1FFBF874276E6E3800918BE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BQHEV6DNR;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "danilocampos.Macropad-ToolboxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Macropad Toolbox.app/Contents/MacOS/Macropad Toolbox";
+			};
+			name = Release;
+		};
+		1FFBF876276E6E3800918BE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BQHEV6DNR;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "danilocampos.Macropad-ToolboxUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Macropad Toolbox";
+			};
+			name = Debug;
+		};
+		1FFBF877276E6E3800918BE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BQHEV6DNR;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "danilocampos.Macropad-ToolboxUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Macropad Toolbox";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FFBF840276E6E3700918BE8 /* Build configuration list for PBXProject "Macropad Toolbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FFBF86D276E6E3800918BE8 /* Debug */,
+				1FFBF86E276E6E3800918BE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FFBF86F276E6E3800918BE8 /* Build configuration list for PBXNativeTarget "Macropad Toolbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FFBF870276E6E3800918BE8 /* Debug */,
+				1FFBF871276E6E3800918BE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FFBF872276E6E3800918BE8 /* Build configuration list for PBXNativeTarget "Macropad ToolboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FFBF873276E6E3800918BE8 /* Debug */,
+				1FFBF874276E6E3800918BE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FFBF875276E6E3800918BE8 /* Build configuration list for PBXNativeTarget "Macropad ToolboxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FFBF876276E6E3800918BE8 /* Debug */,
+				1FFBF877276E6E3800918BE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1FFBF853276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1FFBF854276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodel */,
+			);
+			currentVersion = 1FFBF854276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodel */;
+			path = Macropad_Toolbox.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1FFBF83D276E6E3700918BE8 /* Project object */;
+}
