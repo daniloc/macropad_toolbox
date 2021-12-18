@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Configuration" representedClassName="Configuration" syncable="YES" codeGenerationType="category">
+        <attribute name="modificationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Page" inverseName="configuration" inverseEntity="Page"/>
+    </entity>
+    <entity name="Key" representedClassName="Key" syncable="YES" codeGenerationType="category">
+        <attribute name="colorHex" optional="YES" attributeType="String"/>
+        <attribute name="label" optional="YES" attributeType="String"/>
+        <relationship name="page" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="keys" inverseEntity="Page"/>
+    </entity>
+    <entity name="Macro" representedClassName="Macro" syncable="YES" codeGenerationType="category">
+        <attribute name="asciiContent" optional="YES" attributeType="String"/>
+        <attribute name="modifiers" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+    </entity>
+    <entity name="Page" representedClassName="Page" syncable="YES" codeGenerationType="category">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="configuration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Configuration" inverseName="pages" inverseEntity="Configuration"/>
+        <relationship name="keys" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Key" inverseName="page" inverseEntity="Key"/>
+    </entity>
+    <elements>
+        <element name="Configuration" positionX="-63" positionY="-9" width="128" height="74"/>
+        <element name="Key" positionX="-36" positionY="9" width="128" height="74"/>
+        <element name="Page" positionX="-54" positionY="0" width="128" height="74"/>
+        <element name="Macro" positionX="-27" positionY="54" width="128" height="59"/>
+    </elements>
+</model>

@@ -16,6 +16,14 @@
 		1FFBF860276E6E3800918BE8 /* Macropad_ToolboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF85F276E6E3800918BE8 /* Macropad_ToolboxTests.swift */; };
 		1FFBF86A276E6E3800918BE8 /* Macropad_ToolboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF869276E6E3800918BE8 /* Macropad_ToolboxUITests.swift */; };
 		1FFBF86C276E6E3800918BE8 /* Macropad_ToolboxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF86B276E6E3800918BE8 /* Macropad_ToolboxUITestsLaunchTests.swift */; };
+		1FFBF881276E762C00918BE8 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF879276E762C00918BE8 /* Configuration.swift */; };
+		1FFBF883276E762C00918BE8 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF87B276E762C00918BE8 /* Macro.swift */; };
+		1FFBF885276E762C00918BE8 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF87D276E762C00918BE8 /* Key.swift */; };
+		1FFBF887276E762C00918BE8 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF87F276E762C00918BE8 /* Page.swift */; };
+		1FFBF88A276E783C00918BE8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF889276E783C00918BE8 /* Extensions.swift */; };
+		1FFBF88C276E7D3100918BE8 /* ConfigurationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF88B276E7D3100918BE8 /* ConfigurationListView.swift */; };
+		1FFBF88E276E7DED00918BE8 /* PageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF88D276E7DED00918BE8 /* PageListView.swift */; };
+		1FFBF890276E833700918BE8 /* PageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF88F276E833700918BE8 /* PageDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		1FFBF865276E6E3800918BE8 /* Macropad ToolboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Macropad ToolboxUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FFBF869276E6E3800918BE8 /* Macropad_ToolboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macropad_ToolboxUITests.swift; sourceTree = "<group>"; };
 		1FFBF86B276E6E3800918BE8 /* Macropad_ToolboxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macropad_ToolboxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1FFBF879276E762C00918BE8 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		1FFBF87B276E762C00918BE8 /* Macro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
+		1FFBF87D276E762C00918BE8 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		1FFBF87F276E762C00918BE8 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		1FFBF889276E783C00918BE8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "Macropad Toolbox/Extensions.swift"; sourceTree = SOURCE_ROOT; };
+		1FFBF88B276E7D3100918BE8 /* ConfigurationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationListView.swift; sourceTree = "<group>"; };
+		1FFBF88D276E7DED00918BE8 /* PageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListView.swift; sourceTree = "<group>"; };
+		1FFBF88F276E833700918BE8 /* PageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +115,15 @@
 		1FFBF847276E6E3700918BE8 /* Macropad Toolbox */ = {
 			isa = PBXGroup;
 			children = (
+				1FFBF856276E6E3800918BE8 /* Macropad_Toolbox.entitlements */,
 				1FFBF848276E6E3700918BE8 /* Macropad_ToolboxApp.swift */,
 				1FFBF84A276E6E3700918BE8 /* ContentView.swift */,
+				1FFBF88B276E7D3100918BE8 /* ConfigurationListView.swift */,
+				1FFBF88D276E7DED00918BE8 /* PageListView.swift */,
+				1FFBF88F276E833700918BE8 /* PageDetailView.swift */,
 				1FFBF84C276E6E3800918BE8 /* Assets.xcassets */,
-				1FFBF851276E6E3800918BE8 /* Persistence.swift */,
-				1FFBF856276E6E3800918BE8 /* Macropad_Toolbox.entitlements */,
-				1FFBF853276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodeld */,
+				1FFBF889276E783C00918BE8 /* Extensions.swift */,
+				1FFBF878276E6FF600918BE8 /* Core Data */,
 				1FFBF84E276E6E3800918BE8 /* Preview Content */,
 			);
 			path = "Macropad Toolbox";
@@ -133,6 +152,19 @@
 				1FFBF86B276E6E3800918BE8 /* Macropad_ToolboxUITestsLaunchTests.swift */,
 			);
 			path = "Macropad ToolboxUITests";
+			sourceTree = "<group>";
+		};
+		1FFBF878276E6FF600918BE8 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				1FFBF851276E6E3800918BE8 /* Persistence.swift */,
+				1FFBF853276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodeld */,
+				1FFBF879276E762C00918BE8 /* Configuration.swift */,
+				1FFBF87B276E762C00918BE8 /* Macro.swift */,
+				1FFBF87D276E762C00918BE8 /* Key.swift */,
+				1FFBF87F276E762C00918BE8 /* Page.swift */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +298,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FFBF852276E6E3800918BE8 /* Persistence.swift in Sources */,
+				1FFBF88C276E7D3100918BE8 /* ConfigurationListView.swift in Sources */,
+				1FFBF88A276E783C00918BE8 /* Extensions.swift in Sources */,
+				1FFBF881276E762C00918BE8 /* Configuration.swift in Sources */,
+				1FFBF883276E762C00918BE8 /* Macro.swift in Sources */,
 				1FFBF84B276E6E3700918BE8 /* ContentView.swift in Sources */,
+				1FFBF890276E833700918BE8 /* PageDetailView.swift in Sources */,
+				1FFBF885276E762C00918BE8 /* Key.swift in Sources */,
+				1FFBF88E276E7DED00918BE8 /* PageListView.swift in Sources */,
 				1FFBF855276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodeld in Sources */,
+				1FFBF887276E762C00918BE8 /* Page.swift in Sources */,
 				1FFBF849276E6E3700918BE8 /* Macropad_ToolboxApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
