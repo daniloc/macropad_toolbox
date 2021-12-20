@@ -57,4 +57,12 @@ public class Page: NSManagedObject, Codable {
         }
     }
     
+    func moveKeys(indices: IndexSet, destination: Int) {
+        var keysArray = keys?.array ?? []
+        
+        keysArray.move(fromOffsets: indices, toOffset: destination)
+        
+        self.keys = NSOrderedSet(array: keysArray)
+    }
+    
 }

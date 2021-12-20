@@ -22,10 +22,6 @@ struct PageListView: View {
     
     @State var selectedPage: Page?
     
-    var index: Int? {
-        pages.firstIndex(where: { $0.objectID == selectedPage?.objectID })
-    }
-    
     var pages: [Page] {
         guard let pageSet = configuration.pages else {
             return []
@@ -47,12 +43,11 @@ struct PageListView: View {
                 }
             }
             .onDelete(perform: deleteItems)
+            .onMove { indices, destination in
+                configuration.movePages(indices: indices, destination: destination)
+            }
         }
-        
-        //        .onMove { indices, destination in
-        //            book.chapters.move(fromOffsets: indices,
-        //                toOffset: destination)
-        //        }
+
         .toolbar {
             ToolbarItem {
                 Button(action: addItem) {

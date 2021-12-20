@@ -29,6 +29,7 @@
 		1FFBF896276E9ED800918BE8 /* JSONExportSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF895276E9ED800918BE8 /* JSONExportSupport.swift */; };
 		1FFBF89E2771036400918BE8 /* Keycodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF89D2771036400918BE8 /* Keycodes.swift */; };
 		1FFBF8A027710B8C00918BE8 /* ModifierSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF89F27710B8C00918BE8 /* ModifierSelectionView.swift */; };
+		1FFBF8A42771341600918BE8 /* ReorderableForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF8A32771341600918BE8 /* ReorderableForEach.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +67,7 @@
 		1FFBF87B276E762C00918BE8 /* Macro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		1FFBF87D276E762C00918BE8 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		1FFBF87F276E762C00918BE8 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
-		1FFBF889276E783C00918BE8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "Macropad Toolbox/Extensions.swift"; sourceTree = SOURCE_ROOT; };
+		1FFBF889276E783C00918BE8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "Macropad Toolbox/Utility/Extensions.swift"; sourceTree = SOURCE_ROOT; };
 		1FFBF88B276E7D3100918BE8 /* ConfigurationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationListView.swift; sourceTree = "<group>"; };
 		1FFBF88D276E7DED00918BE8 /* PageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListView.swift; sourceTree = "<group>"; };
 		1FFBF88F276E833700918BE8 /* PageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDetailView.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		1FFBF895276E9ED800918BE8 /* JSONExportSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExportSupport.swift; sourceTree = "<group>"; };
 		1FFBF89D2771036400918BE8 /* Keycodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keycodes.swift; sourceTree = "<group>"; };
 		1FFBF89F27710B8C00918BE8 /* ModifierSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierSelectionView.swift; sourceTree = "<group>"; };
+		1FFBF8A32771341600918BE8 /* ReorderableForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableForEach.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +138,7 @@
 				1FFBF893276E9A8600918BE8 /* KeyGridElementView.swift */,
 				1FFBF89D2771036400918BE8 /* Keycodes.swift */,
 				1FFBF84C276E6E3800918BE8 /* Assets.xcassets */,
-				1FFBF889276E783C00918BE8 /* Extensions.swift */,
+				1FFBF8A1277133F700918BE8 /* Utility */,
 				1FFBF878276E6FF600918BE8 /* Core Data */,
 				1FFBF84E276E6E3800918BE8 /* Preview Content */,
 			);
@@ -180,6 +182,15 @@
 				1FFBF895276E9ED800918BE8 /* JSONExportSupport.swift */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		1FFBF8A1277133F700918BE8 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1FFBF889276E783C00918BE8 /* Extensions.swift */,
+				1FFBF8A32771341600918BE8 /* ReorderableForEach.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +329,7 @@
 			files = (
 				1FFBF89E2771036400918BE8 /* Keycodes.swift in Sources */,
 				1FFBF852276E6E3800918BE8 /* Persistence.swift in Sources */,
+				1FFBF8A42771341600918BE8 /* ReorderableForEach.swift in Sources */,
 				1FFBF88C276E7D3100918BE8 /* ConfigurationListView.swift in Sources */,
 				1FFBF892276E99AF00918BE8 /* KeyDetailView.swift in Sources */,
 				1FFBF88A276E783C00918BE8 /* Extensions.swift in Sources */,

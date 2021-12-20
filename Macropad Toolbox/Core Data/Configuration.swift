@@ -34,4 +34,14 @@ public class Configuration: NSManagedObject {
         
     }
     
+    func movePages(indices: IndexSet, destination: Int) {
+        
+        var pagesArray = pages?.array ?? []
+        
+        pagesArray.move(fromOffsets: indices, toOffset: destination)
+        
+        self.pages = NSOrderedSet(array: pagesArray)
+                
+    }
+    
 }

@@ -41,10 +41,12 @@ struct PageDetailView: View {
                     
                     LazyVGrid(columns: items) {
                         
-                        ForEach(keys) { key in
+                        ReorderableForEach(items: keys) { key in
                             
                             KeyGridElementView(key: key, selectedKey: $selectedKey)
                             
+                        } moveAction: { indices, index in
+                            page.moveKeys(indices: indices, destination: index)
                         }
                     }
                     
@@ -71,6 +73,8 @@ struct PageDetailView: View {
             
     }
 }
+
+
 
 struct PageDetailView_Previews: PreviewProvider {
     static var previews: some View {
