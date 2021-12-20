@@ -22,4 +22,16 @@ public class Configuration: NSManagedObject {
         addToPages(page)
     }
     
+    func jsonData() throws -> Data {
+        
+        guard let pages = pages?.array as? [Page] else {
+            throw ExportError.unableToCapturePages
+        }
+        
+        let data = try JSONEncoder().encode(pages)
+        
+        return data
+        
+    }
+    
 }

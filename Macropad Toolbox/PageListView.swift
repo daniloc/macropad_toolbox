@@ -7,10 +7,24 @@
 
 import SwiftUI
 
+struct PageListItem: View {
+    @ObservedObject var page: Page
+    
+    var body: some View {
+        Text(page.name ?? "")
+    }
+}
+
 struct PageListView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var configuration: Configuration
+    
+    @State var selectedPage: Page?
+    
+    var index: Int? {
+        pages.firstIndex(where: { $0.objectID == selectedPage?.objectID })
+    }
     
     var pages: [Page] {
         guard let pageSet = configuration.pages else {
@@ -21,33 +35,86 @@ struct PageListView: View {
     }
     
     var body: some View {
-        List {
+        List{
             ForEach(pages) { page in
                 NavigationLink {
                     PageDetailView(page: page)
+                        .onAppear {
+                            selectedPage = page
+                        }
                 } label: {
-                    Text(page.name ?? "")
+                    PageListItem(page: page)
                 }
             }
             .onDelete(perform: deleteItems)
         }
-//        .onMove { indices, destination in
-//            book.chapters.move(fromOffsets: indices,
-//                toOffset: destination)
-//        }
+        
+        //        .onMove { indices, destination in
+        //            book.chapters.move(fromOffsets: indices,
+        //                toOffset: destination)
+        //        }
         .toolbar {
             ToolbarItem {
                 Button(action: addItem) {
                     Label("Add Item", systemImage: "plus")
                 }
+                
             }
+            
+            ToolbarItem {
+                Button {
+                    
+                    do {
+                        let data = try configuration.jsonData()
+
+                        let saveURL = showSavePanel()
+                        
+                        write(json: data, to: saveURL)
+                        
+                    } catch {
+                        print("Error generating json: \(error)")
+                    }
+                    
+                    
+                } label: {
+                    Text("Export Config")
+                }
+            }
+            
         }
+    }
+    
+    func showSavePanel() -> URL? {
+        let savePanel = NSSavePanel()
+        savePanel.allowedContentTypes = [.json]
+        savePanel.isExtensionHidden = false
+        savePanel.allowsOtherFileTypes = false
+        savePanel.title = "Save your Macropad configuration:"
+        savePanel.nameFieldLabel = "File name:"
+        savePanel.nameFieldStringValue = "macro.json"
+        
+        let response = savePanel.runModal()
+        return response == .OK ? savePanel.url : nil
+    }
+    
+    func write(json: Data, to url: URL?) {
+        guard let url = url else {
+            return
+        }
+        
+        
+        do {
+            try json.write(to: url)
+        } catch {
+            print("Error writing to file: \(error)")
+        }
+        
     }
     
     private func addItem() {
         withAnimation {
             let newItem = Page(context: viewContext)
-
+            
             configuration.addToPages(newItem)
             configuration.objectWillChange.send()
             
@@ -61,11 +128,11 @@ struct PageListView: View {
             }
         }
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { configuration.pages?[$0] as! NSManagedObject }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {
@@ -75,6 +142,17 @@ struct PageListView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
+    }
+}
+
+private struct SelectedPageKey: FocusedValueKey {
+    typealias Value = Binding<Page>
+}
+
+extension FocusedValues {
+    var selectedPage: Binding<Page>? {
+        get { self[SelectedPageKey.self] }
+        set { self[SelectedPageKey.self] = newValue }
     }
 }
 

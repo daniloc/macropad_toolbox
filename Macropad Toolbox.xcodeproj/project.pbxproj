@@ -24,6 +24,10 @@
 		1FFBF88C276E7D3100918BE8 /* ConfigurationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF88B276E7D3100918BE8 /* ConfigurationListView.swift */; };
 		1FFBF88E276E7DED00918BE8 /* PageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF88D276E7DED00918BE8 /* PageListView.swift */; };
 		1FFBF890276E833700918BE8 /* PageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF88F276E833700918BE8 /* PageDetailView.swift */; };
+		1FFBF892276E99AF00918BE8 /* KeyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF891276E99AF00918BE8 /* KeyDetailView.swift */; };
+		1FFBF894276E9A8600918BE8 /* KeyGridElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF893276E9A8600918BE8 /* KeyGridElementView.swift */; };
+		1FFBF896276E9ED800918BE8 /* JSONExportSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF895276E9ED800918BE8 /* JSONExportSupport.swift */; };
+		1FFBF8982770FD9800918BE8 /* keycode.py in Resources */ = {isa = PBXBuildFile; fileRef = 1FFBF8972770FD9800918BE8 /* keycode.py */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		1FFBF88B276E7D3100918BE8 /* ConfigurationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationListView.swift; sourceTree = "<group>"; };
 		1FFBF88D276E7DED00918BE8 /* PageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageListView.swift; sourceTree = "<group>"; };
 		1FFBF88F276E833700918BE8 /* PageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDetailView.swift; sourceTree = "<group>"; };
+		1FFBF891276E99AF00918BE8 /* KeyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDetailView.swift; sourceTree = "<group>"; };
+		1FFBF893276E9A8600918BE8 /* KeyGridElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyGridElementView.swift; sourceTree = "<group>"; };
+		1FFBF895276E9ED800918BE8 /* JSONExportSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExportSupport.swift; sourceTree = "<group>"; };
+		1FFBF8972770FD9800918BE8 /* keycode.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = keycode.py; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,9 @@
 				1FFBF88B276E7D3100918BE8 /* ConfigurationListView.swift */,
 				1FFBF88D276E7DED00918BE8 /* PageListView.swift */,
 				1FFBF88F276E833700918BE8 /* PageDetailView.swift */,
+				1FFBF891276E99AF00918BE8 /* KeyDetailView.swift */,
+				1FFBF893276E9A8600918BE8 /* KeyGridElementView.swift */,
+				1FFBF8992770FDAA00918BE8 /* Python References */,
 				1FFBF84C276E6E3800918BE8 /* Assets.xcassets */,
 				1FFBF889276E783C00918BE8 /* Extensions.swift */,
 				1FFBF878276E6FF600918BE8 /* Core Data */,
@@ -163,8 +174,17 @@
 				1FFBF87B276E762C00918BE8 /* Macro.swift */,
 				1FFBF87D276E762C00918BE8 /* Key.swift */,
 				1FFBF87F276E762C00918BE8 /* Page.swift */,
+				1FFBF895276E9ED800918BE8 /* JSONExportSupport.swift */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		1FFBF8992770FDAA00918BE8 /* Python References */ = {
+			isa = PBXGroup;
+			children = (
+				1FFBF8972770FD9800918BE8 /* keycode.py */,
+			);
+			path = "Python References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FFBF8982770FD9800918BE8 /* keycode.py in Resources */,
 				1FFBF850276E6E3800918BE8 /* Preview Assets.xcassets in Resources */,
 				1FFBF84D276E6E3800918BE8 /* Assets.xcassets in Resources */,
 			);
@@ -299,6 +320,7 @@
 			files = (
 				1FFBF852276E6E3800918BE8 /* Persistence.swift in Sources */,
 				1FFBF88C276E7D3100918BE8 /* ConfigurationListView.swift in Sources */,
+				1FFBF892276E99AF00918BE8 /* KeyDetailView.swift in Sources */,
 				1FFBF88A276E783C00918BE8 /* Extensions.swift in Sources */,
 				1FFBF881276E762C00918BE8 /* Configuration.swift in Sources */,
 				1FFBF883276E762C00918BE8 /* Macro.swift in Sources */,
@@ -306,7 +328,9 @@
 				1FFBF890276E833700918BE8 /* PageDetailView.swift in Sources */,
 				1FFBF885276E762C00918BE8 /* Key.swift in Sources */,
 				1FFBF88E276E7DED00918BE8 /* PageListView.swift in Sources */,
+				1FFBF896276E9ED800918BE8 /* JSONExportSupport.swift in Sources */,
 				1FFBF855276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodeld in Sources */,
+				1FFBF894276E9A8600918BE8 /* KeyGridElementView.swift in Sources */,
 				1FFBF887276E762C00918BE8 /* Page.swift in Sources */,
 				1FFBF849276E6E3700918BE8 /* Macropad_ToolboxApp.swift in Sources */,
 			);

@@ -9,6 +9,14 @@ import CoreData
 
 struct PersistenceController {
     static let shared = PersistenceController()
+    
+    static var previewObjectContext: NSManagedObjectContext {
+        return Self.preview.container.viewContext
+    }
+    
+    static var viewContext: NSManagedObjectContext {
+        return Self.shared.container.viewContext
+    }
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)

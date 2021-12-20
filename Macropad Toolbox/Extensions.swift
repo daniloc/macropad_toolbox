@@ -110,3 +110,10 @@ extension String {
   }
 }
 
+func ??<T>(lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {
+    //via: https://stackoverflow.com/a/61002589/150181
+    Binding(
+        get: { lhs.wrappedValue ?? rhs },
+        set: { lhs.wrappedValue = $0 }
+    )
+}

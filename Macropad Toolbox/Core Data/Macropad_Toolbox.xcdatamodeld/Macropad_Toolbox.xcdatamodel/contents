@@ -8,11 +8,13 @@
     <entity name="Key" representedClassName="Key" syncable="YES" codeGenerationType="category">
         <attribute name="colorHex" optional="YES" attributeType="String"/>
         <attribute name="label" optional="YES" attributeType="String"/>
+        <relationship name="macro" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Macro" inverseName="key" inverseEntity="Macro"/>
         <relationship name="page" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="keys" inverseEntity="Page"/>
     </entity>
     <entity name="Macro" representedClassName="Macro" syncable="YES" codeGenerationType="category">
         <attribute name="asciiContent" optional="YES" attributeType="String"/>
         <attribute name="modifiers" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <relationship name="key" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Key" inverseName="macro" inverseEntity="Key"/>
     </entity>
     <entity name="Page" representedClassName="Page" syncable="YES" codeGenerationType="category">
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -21,8 +23,8 @@
     </entity>
     <elements>
         <element name="Configuration" positionX="-63" positionY="-9" width="128" height="74"/>
-        <element name="Key" positionX="-36" positionY="9" width="128" height="74"/>
+        <element name="Key" positionX="-36" positionY="9" width="128" height="89"/>
         <element name="Page" positionX="-54" positionY="0" width="128" height="74"/>
-        <element name="Macro" positionX="-27" positionY="54" width="128" height="59"/>
+        <element name="Macro" positionX="-27" positionY="54" width="128" height="74"/>
     </elements>
 </model>

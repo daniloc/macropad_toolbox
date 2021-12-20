@@ -24,56 +24,51 @@ struct PageDetailView: View {
         Array(repeating: .init(.fixed(80)), count: 3)
     }
     
-    func borderColorForKey(_ key: Key) -> Color {
-        if key == selectedKey {
-            return .yellow
-        } else {
-            return .black
-        }
-    }
-    
-    func borderWidthForKey(_ key: Key) -> Double {
-        if key == selectedKey {
-            return 3
-        } else {
-            return 1
-        }
-    }
+    var body: some View {
+        
+        HStack {
+            
+            GroupBox("Page Layout") {
+                
+                VStack {
+                    
+                    HStack {
+                        Text("Title:")
+                        TextField("Page title:", text: $page.name ?? "")
+                    }
+                    
 
-    func keyView(_ key: Key) -> some View {
-        ZStack {
-            key.color
-            
-            RadialGradient(colors: [.clear, .init(white: 0.5, opacity: 0.5)].reversed(), center: .center, startRadius: 1, endRadius: 25)
-            
-            VStack {
-                if key.label?.count == 0 {
-                    Text("Blank")
-                        .foregroundColor(.secondary)
+                    
+                    LazyVGrid(columns: items) {
+                        
+                        ForEach(keys) { key in
+                            
+                            KeyGridElementView(key: key, selectedKey: $selectedKey)
+                            
+                        }
+                    }
+                    
                 }
                 
             }
-        }
-        .border(borderColorForKey(key), width: borderWidthForKey(key))
-        .frame(width: 80, height: 80)
-        .onTapGesture {
-            selectedKey = key
-        }
-    }
-    
-    var body: some View {
-        
-        ScrollView {
             
-            LazyVGrid(columns: items) {
-                
-                ForEach(keys) { key in
+            GroupBox("Key details") {
+                if let key = selectedKey {
                     
-                    keyView(key)
+                    KeyDetailView(key: key)
+                }
                     
-                }                
+                    Spacer()
+            
             }
         }
+        .padding()
+
+        .onAppear {
+            selectedKey = keys.first
+        }
+        
+            
     }
 }
 
