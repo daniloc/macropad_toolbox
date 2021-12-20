@@ -8,22 +8,7 @@
 
 import Foundation
 import CoreData
-
-enum Modifier: String, Codable {
-    case command = "cmd",
-    alt,
-    control = "ctrl",
-    shift
-}
-
-enum SpecialKeys: String, Codable {
-    case returnKey = "return",
-    enter,
-    pageUp,
-    pageDown,
-    home,
-    end
-}
+import PythonKit
 
 @objc(Macro)
 public class Macro: NSManagedObject, Codable {
@@ -35,10 +20,55 @@ public class Macro: NSManagedObject, Codable {
         case textContent,
         modifiers
     }
+    
+    var preview: String {
+                
+        let separator = " + "
+                
+        let modifierStrings: [String] = specialKeys.map { String("\($0)") }
+        let modifierSequence = modifierStrings.joined(separator: separator)
+                
+        guard let textContent = textContent, textContent.count > 0 else {
+            return modifierSequence
+        }
+
+        if modifierSequence.count > 0 {
+            return modifierSequence + separator + textContent
+        }
+        
+        return ""
+        
+    }
+    
+    var specialKeys: [AdafruitPythonHIDKeycode] {
+        get {
+            
+            guard let modifiers = modifiers else { return [] }
+            
+            return modifiers.compactMap { AdafruitPythonHIDKeycode(rawValue: $0) }
+            
+        }
+        
+        set {
+            
+            modifiers = newValue.map { $0.rawValue }
+        }
+    }
+    
+    func toggleKey(_ key: AdafruitPythonHIDKeycode) {
+        
+        if specialKeys.contains(key) {
+            specialKeys.removeAll { $0 == key }
+        } else {
+            specialKeys.insert(key, at: 0)
+        }
+        
+    }
 
     public required convenience init(from decoder: Decoder) throws {
         guard let context = decoder.managedObjectContext else {
             throw DecoderConfigurationError.missingManagedObjectContext
+                    
         }
         
         self.init(context: context)
@@ -51,7 +81,7 @@ public class Macro: NSManagedObject, Codable {
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        
+
         try container.encodeIfPresent(textContent, forKey: .textContent)
         try container.encodeIfPresent(modifiers, forKey: .modifiers)
     }

@@ -27,7 +27,8 @@
 		1FFBF892276E99AF00918BE8 /* KeyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF891276E99AF00918BE8 /* KeyDetailView.swift */; };
 		1FFBF894276E9A8600918BE8 /* KeyGridElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF893276E9A8600918BE8 /* KeyGridElementView.swift */; };
 		1FFBF896276E9ED800918BE8 /* JSONExportSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF895276E9ED800918BE8 /* JSONExportSupport.swift */; };
-		1FFBF8982770FD9800918BE8 /* keycode.py in Resources */ = {isa = PBXBuildFile; fileRef = 1FFBF8972770FD9800918BE8 /* keycode.py */; };
+		1FFBF89E2771036400918BE8 /* Keycodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF89D2771036400918BE8 /* Keycodes.swift */; };
+		1FFBF8A027710B8C00918BE8 /* ModifierSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF89F27710B8C00918BE8 /* ModifierSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +73,8 @@
 		1FFBF891276E99AF00918BE8 /* KeyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDetailView.swift; sourceTree = "<group>"; };
 		1FFBF893276E9A8600918BE8 /* KeyGridElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyGridElementView.swift; sourceTree = "<group>"; };
 		1FFBF895276E9ED800918BE8 /* JSONExportSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExportSupport.swift; sourceTree = "<group>"; };
-		1FFBF8972770FD9800918BE8 /* keycode.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = keycode.py; sourceTree = "<group>"; };
+		1FFBF89D2771036400918BE8 /* Keycodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keycodes.swift; sourceTree = "<group>"; };
+		1FFBF89F27710B8C00918BE8 /* ModifierSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +132,9 @@
 				1FFBF88D276E7DED00918BE8 /* PageListView.swift */,
 				1FFBF88F276E833700918BE8 /* PageDetailView.swift */,
 				1FFBF891276E99AF00918BE8 /* KeyDetailView.swift */,
+				1FFBF89F27710B8C00918BE8 /* ModifierSelectionView.swift */,
 				1FFBF893276E9A8600918BE8 /* KeyGridElementView.swift */,
-				1FFBF8992770FDAA00918BE8 /* Python References */,
+				1FFBF89D2771036400918BE8 /* Keycodes.swift */,
 				1FFBF84C276E6E3800918BE8 /* Assets.xcassets */,
 				1FFBF889276E783C00918BE8 /* Extensions.swift */,
 				1FFBF878276E6FF600918BE8 /* Core Data */,
@@ -179,14 +182,6 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
-		1FFBF8992770FDAA00918BE8 /* Python References */ = {
-			isa = PBXGroup;
-			children = (
-				1FFBF8972770FD9800918BE8 /* keycode.py */,
-			);
-			path = "Python References";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,6 +198,8 @@
 			dependencies = (
 			);
 			name = "Macropad Toolbox";
+			packageProductDependencies = (
+			);
 			productName = "Macropad Toolbox";
 			productReference = 1FFBF845276E6E3700918BE8 /* Macropad Toolbox.app */;
 			productType = "com.apple.product-type.application";
@@ -275,6 +272,8 @@
 				Base,
 			);
 			mainGroup = 1FFBF83C276E6E3700918BE8;
+			packageReferences = (
+			);
 			productRefGroup = 1FFBF846276E6E3700918BE8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -291,7 +290,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FFBF8982770FD9800918BE8 /* keycode.py in Resources */,
 				1FFBF850276E6E3800918BE8 /* Preview Assets.xcassets in Resources */,
 				1FFBF84D276E6E3800918BE8 /* Assets.xcassets in Resources */,
 			);
@@ -318,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FFBF89E2771036400918BE8 /* Keycodes.swift in Sources */,
 				1FFBF852276E6E3800918BE8 /* Persistence.swift in Sources */,
 				1FFBF88C276E7D3100918BE8 /* ConfigurationListView.swift in Sources */,
 				1FFBF892276E99AF00918BE8 /* KeyDetailView.swift in Sources */,
@@ -328,6 +327,7 @@
 				1FFBF890276E833700918BE8 /* PageDetailView.swift in Sources */,
 				1FFBF885276E762C00918BE8 /* Key.swift in Sources */,
 				1FFBF88E276E7DED00918BE8 /* PageListView.swift in Sources */,
+				1FFBF8A027710B8C00918BE8 /* ModifierSelectionView.swift in Sources */,
 				1FFBF896276E9ED800918BE8 /* JSONExportSupport.swift in Sources */,
 				1FFBF855276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodeld in Sources */,
 				1FFBF894276E9A8600918BE8 /* KeyGridElementView.swift in Sources */,

@@ -11,7 +11,23 @@ struct MacroEditView: View {
     @ObservedObject var macro: Macro
     
     var body: some View {
-        TextField("Output", text: $macro.textContent ?? "", prompt: Text("Typed by this key"))
+        
+        VStack(alignment: .leading) {
+            
+            Text(macro.preview)
+                .foregroundColor(.secondary)
+        
+            HStack {
+            Text("Text output:")
+        TextField("Output", text: $macro.textContent ?? "", prompt: Text("Text typed by this key"))
+                
+            }
+            
+            Text("Special keys:")
+            
+            ModifierSelectionView(macro: macro)
+            
+        }
     }
 }
 
@@ -28,7 +44,6 @@ struct KeyDetailView: View {
             if let macro = key.macro {
                 MacroEditView(macro: macro)
             }
-            
 
         }
     }
