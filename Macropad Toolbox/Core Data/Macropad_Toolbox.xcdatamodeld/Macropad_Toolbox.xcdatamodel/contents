@@ -12,8 +12,8 @@
         <relationship name="page" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="keys" inverseEntity="Page"/>
     </entity>
     <entity name="Macro" representedClassName="Macro" syncable="YES" codeGenerationType="category">
-        <attribute name="asciiContent" optional="YES" attributeType="String"/>
-        <attribute name="modifiers" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="modifiers" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformerName" customClassName="[String]"/>
+        <attribute name="textContent" optional="YES" attributeType="String"/>
         <relationship name="key" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Key" inverseName="macro" inverseEntity="Key"/>
     </entity>
     <entity name="Page" representedClassName="Page" syncable="YES" codeGenerationType="category">
@@ -22,9 +22,9 @@
         <relationship name="keys" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Key" inverseName="page" inverseEntity="Key"/>
     </entity>
     <elements>
-        <element name="Configuration" positionX="-63" positionY="-9" width="128" height="74"/>
-        <element name="Key" positionX="-36" positionY="9" width="128" height="89"/>
-        <element name="Page" positionX="-54" positionY="0" width="128" height="74"/>
-        <element name="Macro" positionX="-27" positionY="54" width="128" height="74"/>
+        <element name="Configuration" positionX="-171.6328125" positionY="-124.21484375" width="128" height="74"/>
+        <element name="Key" positionX="51.50390625" positionY="65.34375" width="128" height="89"/>
+        <element name="Page" positionX="42.90234375" positionY="-35.73046875" width="128" height="74"/>
+        <element name="Macro" positionX="122.39453125" positionY="222.01171875" width="128" height="88"/>
     </elements>
 </model>

@@ -20,7 +20,7 @@ public class Key: NSManagedObject, Codable {
         
         self.macro = Macro(context: self.managedObjectContext!)
         
-        self.macro?.asciiContent = " "
+        self.macro?.textContent = " "
         
     }
     

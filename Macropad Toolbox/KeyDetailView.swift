@@ -11,7 +11,7 @@ struct MacroEditView: View {
     @ObservedObject var macro: Macro
     
     var body: some View {
-        TextField("Output", text: $macro.asciiContent ?? "", prompt: Text("Typed by this key"))
+        TextField("Output", text: $macro.textContent ?? "", prompt: Text("Typed by this key"))
     }
 }
 
