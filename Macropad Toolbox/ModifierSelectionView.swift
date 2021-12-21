@@ -26,11 +26,12 @@ struct ModifierSelectionView: View {
                             Color.blue
                                 .border(Color.black, width: 1)
                         } else {
-                            Color.init(white: 0.7)
+                            Color.specialKeyBackground
                                 .border(Color.black, width: 1)
                         }
                         
                         Text(String("\(keycode)"))
+                            .foregroundColor(.primary)
                             .font(.system(size: 12))
                             .lineLimit(1)
                     }

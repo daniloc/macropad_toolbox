@@ -11,6 +11,7 @@ struct PageDetailView: View {
     
     @ObservedObject var page: Page
     @State var selectedKey: Key?
+    @State var confirmDeleteShown = false
     
     var keys: [Key] {
         guard let keySet = page.keys else {
@@ -28,7 +29,9 @@ struct PageDetailView: View {
         
         HStack {
             
-            GroupBox("Page Layout") {
+            VStack {
+            
+            GroupBox("Page Detail") {
                 
                 VStack {
                     
@@ -50,7 +53,33 @@ struct PageDetailView: View {
                         }
                     }
                     
+
+
+                    
                 }
+                
+            }
+                Spacer()
+                
+                Button {
+                    confirmDeleteShown = true
+                } label: {
+                    Label("Delete \(page.name ?? "Unnamed Page")", systemImage: "trash")
+                }
+                .confirmationDialog("Are you sure you want to delete \(page.name ?? "")?", isPresented: $confirmDeleteShown, actions: {
+
+                    
+                    Button("Delete \(page.name ?? "")", role: .destructive) {
+                        page.configuration?.deletePage(page)
+                    }
+                    Button("Cancel", role: .cancel) {
+
+                    }
+                })
+                .padding(.vertical, 8)
+            
+                
+
                 
             }
             

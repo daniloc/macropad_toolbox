@@ -14,8 +14,15 @@ struct MacroEditView: View {
         
         VStack(alignment: .leading) {
             
-            Text(macro.preview)
-                .foregroundColor(.secondary)
+            if macro.preview.count == 0 {
+                Text("[No output]")
+                    .foregroundColor(.secondary)
+            } else {
+                Text(macro.preview)
+                    .foregroundColor(.secondary)
+            }
+            
+            
         
             HStack {
             Text("Text output:")

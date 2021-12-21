@@ -52,3 +52,15 @@ struct PersistenceController {
         })
     }
 }
+
+extension NSManagedObjectContext {
+    func attemptSaveLoggingErrors() {
+        
+        do {
+            try save()
+        } catch {
+            print("⚠️ Error saving context:\n\(error)")
+        }
+        
+    }
+}

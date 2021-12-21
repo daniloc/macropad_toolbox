@@ -31,6 +31,9 @@ struct PageListView: View {
     }
     
     var body: some View {
+        
+        VStack(alignment: .leading) {
+        
         List{
             ForEach(pages) { page in
                 NavigationLink {
@@ -47,17 +50,25 @@ struct PageListView: View {
                 configuration.movePages(indices: indices, destination: destination)
             }
         }
+            
+            Divider()
+            
+            Button(action: addItem) {
+                Label("Add Page", systemImage: "plus")
+            }
+            .buttonStyle(.borderless)
+            .padding(4)
+            .padding(.bottom, 8)
+            
+        }
 
         .toolbar {
-            ToolbarItem {
-                Button(action: addItem) {
-                    Label("Add Item", systemImage: "plus")
-                }
-                
-            }
+            
             
             ToolbarItem {
                 Button {
+                    
+                    viewContext.attemptSaveLoggingErrors()
                     
                     do {
                         let data = try configuration.jsonData()
@@ -72,7 +83,7 @@ struct PageListView: View {
                     
                     
                 } label: {
-                    Text("Export Config")
+                    Text("Export \(configuration.name ?? "[Unnamed Configuration]")")
                 }
             }
             

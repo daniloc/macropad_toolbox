@@ -30,6 +30,7 @@
 		1FFBF89E2771036400918BE8 /* Keycodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF89D2771036400918BE8 /* Keycodes.swift */; };
 		1FFBF8A027710B8C00918BE8 /* ModifierSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF89F27710B8C00918BE8 /* ModifierSelectionView.swift */; };
 		1FFBF8A42771341600918BE8 /* ReorderableForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF8A32771341600918BE8 /* ReorderableForEach.swift */; };
+		1FFBF8A62771355700918BE8 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFBF8A52771355700918BE8 /* UIConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		1FFBF89D2771036400918BE8 /* Keycodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keycodes.swift; sourceTree = "<group>"; };
 		1FFBF89F27710B8C00918BE8 /* ModifierSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierSelectionView.swift; sourceTree = "<group>"; };
 		1FFBF8A32771341600918BE8 /* ReorderableForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableForEach.swift; sourceTree = "<group>"; };
+		1FFBF8A52771355700918BE8 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			children = (
 				1FFBF889276E783C00918BE8 /* Extensions.swift */,
 				1FFBF8A32771341600918BE8 /* ReorderableForEach.swift */,
+				1FFBF8A52771355700918BE8 /* UIConstants.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				1FFBF885276E762C00918BE8 /* Key.swift in Sources */,
 				1FFBF88E276E7DED00918BE8 /* PageListView.swift in Sources */,
 				1FFBF8A027710B8C00918BE8 /* ModifierSelectionView.swift in Sources */,
+				1FFBF8A62771355700918BE8 /* UIConstants.swift in Sources */,
 				1FFBF896276E9ED800918BE8 /* JSONExportSupport.swift in Sources */,
 				1FFBF855276E6E3800918BE8 /* Macropad_Toolbox.xcdatamodeld in Sources */,
 				1FFBF894276E9A8600918BE8 /* KeyGridElementView.swift in Sources */,

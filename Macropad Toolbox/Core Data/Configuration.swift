@@ -44,4 +44,11 @@ public class Configuration: NSManagedObject {
                 
     }
     
+    func deletePage(_ page: Page) {
+        page.configuration = nil
+        
+        PersistenceController.viewContext.delete(page)
+        PersistenceController.viewContext.attemptSaveLoggingErrors()
+    }
+    
 }
