@@ -44,8 +44,23 @@ struct KeyDetailView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            TextField("Label", text: $key.label ?? "", prompt: Text("Key label"))
             
+            HStack {
+            
+            TextField("Label", text: $key.label ?? "", prompt: Text("Key label"))
+                
+                Spacer()
+                
+                Button {
+                    key.reset()
+                } label: {
+                    Label("Reset", systemImage: "clear")
+                }
+                .padding(8)
+
+            
+            }
+                
             ColorPicker("Color", selection: $key.color)
             
             if let macro = key.macro {

@@ -15,14 +15,11 @@ public class Key: NSManagedObject, Codable {
     public override func awakeFromInsert() {
         super.awakeFromInsert()
         
-        self.color = Color(white: 0.0, opacity: 1)
-        self.label = ""
-        
-        self.macro = Macro(context: self.managedObjectContext!)
-        
-        self.macro?.textContent = " "
+        reset()
         
     }
+    
+    
     
     var color: Color {
         get {
@@ -34,6 +31,15 @@ public class Key: NSManagedObject, Codable {
             self.colorHex = newValue.toHex
             self.objectWillChange.send()
         }
+    }
+    
+    func reset() {
+        self.color = Color(white: 0.0, opacity: 1)
+        self.label = ""
+        
+        self.macro = Macro(context: self.managedObjectContext!)
+        
+        self.macro?.textContent = ""
     }
     
     //MARK: - Codable
