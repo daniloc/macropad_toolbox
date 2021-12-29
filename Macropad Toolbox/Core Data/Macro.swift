@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreData
-import PythonKit
 
 @objc(Macro)
 public class Macro: NSManagedObject, Codable {
@@ -52,6 +51,8 @@ public class Macro: NSManagedObject, Codable {
         set {
             
             modifiers = newValue.map { $0.rawValue }
+            
+            self.key?.page?.configuration?.logUpdate()
         }
     }
     

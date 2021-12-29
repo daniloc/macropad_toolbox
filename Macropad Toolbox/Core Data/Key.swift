@@ -30,6 +30,9 @@ public class Key: NSManagedObject, Codable {
             
             self.colorHex = newValue.toHex
             self.objectWillChange.send()
+            
+            self.page?.configuration?.logUpdate()
+
         }
     }
     

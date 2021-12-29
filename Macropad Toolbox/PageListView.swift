@@ -21,6 +21,7 @@ struct PageListView: View {
     @ObservedObject var configuration: Configuration
     
     @State var selectedPage: Page?
+    @State var confirmDeleteShown = false
     
     var pages: [Page] {
         guard let pageSet = configuration.pages else {
@@ -32,7 +33,7 @@ struct PageListView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
         
         List{
             ForEach(pages) { page in
@@ -53,6 +54,11 @@ struct PageListView: View {
             
             Divider()
             
+            VStack(spacing: 4) {
+            
+            TextField("Config Name", text: $configuration.name ?? "", prompt: Text("Config Name"))
+                    .padding(4)
+            
             Button(action: addItem) {
                 Label("Add Page", systemImage: "plus")
             }
@@ -60,6 +66,25 @@ struct PageListView: View {
             .padding(4)
             .padding(.bottom, 8)
             
+            Button(action: {
+                confirmDeleteShown = true
+            }) {
+                Label("Delete Config", systemImage: "trash")
+            }
+            .confirmationDialog("Are you sure you want to delete \(configuration.name ?? "")?", isPresented: $confirmDeleteShown, actions: {
+
+                
+                Button("Delete \(configuration.name ?? "")", role: .destructive) {
+                    configuration.delete()
+                }
+                Button("Cancel", role: .cancel) {
+
+                }
+            })
+            .buttonStyle(.borderless)
+            .padding(4)
+            .padding(.bottom, 8)
+            }
         }
 
         .toolbar {
@@ -114,6 +139,10 @@ struct PageListView: View {
         } catch {
             print("Error writing to file: \(error)")
         }
+        
+    }
+    
+    private func deleteConfig() {
         
     }
     

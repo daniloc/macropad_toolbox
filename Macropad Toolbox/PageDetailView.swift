@@ -76,6 +76,7 @@ struct PageDetailView: View {
 
                     }
                 })
+                .buttonStyle(.borderless)
                 .padding(.vertical, 8)
             
                 

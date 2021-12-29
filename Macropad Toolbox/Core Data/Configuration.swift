@@ -41,14 +41,32 @@ public class Configuration: NSManagedObject {
         pagesArray.move(fromOffsets: indices, toOffset: destination)
         
         self.pages = NSOrderedSet(array: pagesArray)
-                
+        
+        logUpdate()
     }
     
     func deletePage(_ page: Page) {
+        
+        guard let context = self.managedObjectContext else { return }
+        
         page.configuration = nil
         
-        PersistenceController.viewContext.delete(page)
-        PersistenceController.viewContext.attemptSaveLoggingErrors()
+        context.delete(page)
+        context.attemptSaveLoggingErrors()
+        
+        logUpdate()
+    }
+    
+    func delete() {
+        guard let context = self.managedObjectContext else { return }
+        
+        context.delete(self)
+        context.attemptSaveLoggingErrors()
+    }
+    
+    func logUpdate() {
+        self.modificationDate = Date()
+        self.managedObjectContext?.attemptSaveLoggingErrors()
     }
     
 }

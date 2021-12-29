@@ -63,6 +63,8 @@ public class Page: NSManagedObject, Codable {
         keysArray.move(fromOffsets: indices, toOffset: destination)
         
         self.keys = NSOrderedSet(array: keysArray)
+        
+        self.configuration?.logUpdate()
     }
     
 }
