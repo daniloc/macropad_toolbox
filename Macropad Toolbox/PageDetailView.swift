@@ -9,6 +9,9 @@ import SwiftUI
 
 struct PageDetailView: View {
     
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.undoManager) var undoManager
+    
     @ObservedObject var page: Page
     @State var selectedKey: Key?
     @State var confirmDeleteShown = false
@@ -98,6 +101,7 @@ struct PageDetailView: View {
 
         .onAppear {
             selectedKey = keys.first
+            viewContext.undoManager = undoManager
         }
         
             
