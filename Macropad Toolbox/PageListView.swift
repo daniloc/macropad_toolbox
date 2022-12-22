@@ -34,59 +34,73 @@ struct PageListView: View {
     var body: some View {
         
         VStack(alignment: .leading, spacing: 0) {
-        
-        List{
-            ForEach(pages) { page in
-                NavigationLink {
-                    PageDetailView(page: page)
-                        .onAppear {
-                            selectedPage = page
-                        }
-                } label: {
-                    PageListItem(page: page)
+            
+            VStack(alignment: .leading, spacing: 4) {
+                
+                TextField("Config Name", text: $configuration.name ?? "", prompt: Text("Config Name"))
+                    .padding([.top, .horizontal])
+                
+                
+                Button(action: {
+                    confirmDeleteShown = true
+                }) {
+                    Label("Delete", systemImage: "trash")
                 }
+                .confirmationDialog("Are you sure you want to delete \(configuration.name ?? "")?", isPresented: $confirmDeleteShown, actions: {
+                    
+                    
+                    Button("Delete \(configuration.name ?? "")", role: .destructive) {
+                        configuration.delete()
+                    }
+                    Button("Cancel", role: .cancel) {
+                        
+                    }
+                })
+                .buttonStyle(.borderless)
+                .padding()
+                Divider()
+                    .padding([.horizontal, .bottom])
+                
+                Text("Pages:")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding([.leading, .bottom])
+                    .foregroundColor(.secondary)
+                
             }
-            .onDelete(perform: deleteItems)
-            .onMove { indices, destination in
-                configuration.movePages(indices: indices, destination: destination)
-            }
-        }
             
             Divider()
             
-            VStack(spacing: 4) {
             
-            TextField("Config Name", text: $configuration.name ?? "", prompt: Text("Config Name"))
-                    .padding(4)
+            List{
+                ForEach(pages) { page in
+                    NavigationLink {
+                        PageDetailView(page: page)
+                            .onAppear {
+                                selectedPage = page
+                            }
+                    } label: {
+                        PageListItem(page: page)
+                    }
+                }
+                .onDelete(perform: deleteItems)
+                .onMove { indices, destination in
+                    configuration.movePages(indices: indices, destination: destination)
+                }
+            }
+            
+            Divider()
             
             Button(action: addItem) {
                 Label("Add Page", systemImage: "plus")
             }
             .buttonStyle(.borderless)
-            .padding(4)
-            .padding(.bottom, 8)
+            .padding(.horizontal)
+            .padding(.vertical, 8)
             
-            Button(action: {
-                confirmDeleteShown = true
-            }) {
-                Label("Delete Config", systemImage: "trash")
-            }
-            .confirmationDialog("Are you sure you want to delete \(configuration.name ?? "")?", isPresented: $confirmDeleteShown, actions: {
-
-                
-                Button("Delete \(configuration.name ?? "")", role: .destructive) {
-                    configuration.delete()
-                }
-                Button("Cancel", role: .cancel) {
-
-                }
-            })
-            .buttonStyle(.borderless)
-            .padding(4)
-            .padding(.bottom, 8)
-            }
+            
+            
         }
-
+        
         .toolbar {
             
             
@@ -97,7 +111,7 @@ struct PageListView: View {
                     
                     do {
                         let data = try configuration.jsonData()
-
+                        
                         let saveURL = showSavePanel()
                         
                         write(json: data, to: saveURL)

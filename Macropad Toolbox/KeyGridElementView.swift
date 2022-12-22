@@ -43,7 +43,7 @@ struct KeyGridElementView: View {
             ZStack {
                 key.color
                 
-                RadialGradient(colors: [.clear, .init(white: 0.5, opacity: 0.5)].reversed(), center: .center, startRadius: 1, endRadius: 25)
+                RadialGradient(colors: [.clear, .init(white: 0.5, opacity: 0.25)].reversed(), center: .center, startRadius: 1, endRadius: 25)
             }
             .frame(width: 60, height: 60)
             .border(.black, width: 1)

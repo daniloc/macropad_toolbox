@@ -24,16 +24,15 @@ struct ModifierSelectionView: View {
                         
                         if macro.specialKeys.contains(keycode) {
                             Color.blue
-                                .border(Color.black, width: 1)
                         } else {
                             Color.specialKeyBackground
-                                .border(Color.black, width: 1)
                         }
                         
                         Text(String("\(keycode)"))
+                            .font(.system(size: 11, design: .monospaced))
                             .foregroundColor(.primary)
-                            .font(.system(size: 12))
                             .lineLimit(1)
+                            .padding(2)
                     }
                     .onTapGesture {
                         macro.toggleKey(keycode)
