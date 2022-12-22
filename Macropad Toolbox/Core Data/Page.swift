@@ -28,7 +28,8 @@ public class Page: NSManagedObject, Codable {
     
     enum CodingKeys: CodingKey {
         case name,
-        keys
+        keys,
+        invocation
     }
 
     public required convenience init(from decoder: Decoder) throws {
@@ -45,12 +46,16 @@ public class Page: NSManagedObject, Codable {
         let keysArray = try container.decode([Key].self, forKey: .keys)
         
         self.keys = NSOrderedSet(array: keysArray)
+        
+        self.invocation = try container.decode([Int].self, forKey: .invocation)
     }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
             
         try container.encodeIfPresent(name, forKey: .name)
+        
+        try container.encodeIfPresent(invocation, forKey: .invocation)
 
         if let keysArray = keys?.array as? [Key] {
             try container.encode(keysArray, forKey: .keys)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Configuration" representedClassName="Configuration" syncable="YES" codeGenerationType="category">
         <attribute name="modificationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -17,14 +17,9 @@
         <relationship name="key" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Key" inverseName="macro" inverseEntity="Key"/>
     </entity>
     <entity name="Page" representedClassName="Page" syncable="YES" codeGenerationType="category">
+        <attribute name="invocation" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="configuration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Configuration" inverseName="pages" inverseEntity="Configuration"/>
         <relationship name="keys" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Key" inverseName="page" inverseEntity="Key"/>
     </entity>
-    <elements>
-        <element name="Configuration" positionX="-171.6328125" positionY="-124.21484375" width="128" height="74"/>
-        <element name="Key" positionX="51.50390625" positionY="65.34375" width="128" height="89"/>
-        <element name="Page" positionX="42.90234375" positionY="-35.73046875" width="128" height="74"/>
-        <element name="Macro" positionX="122.39453125" positionY="222.01171875" width="128" height="88"/>
-    </elements>
 </model>
