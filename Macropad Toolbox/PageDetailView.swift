@@ -45,6 +45,10 @@ struct PageDetailView: View {
                             TextField("Page title:", text: $page.name ?? "")
                         }
                         
+                        PageInvocationEditView(page: page)
+                        
+                        Divider()
+                        
                         HStack {
                             RotaryConfigView(encoder: page.rotary(for: .left), selectedMacro: $selectedRotaryMacro, activeEventString: $groupBoxLabel, label: "Left Rotary")
                             

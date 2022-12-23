@@ -12,6 +12,10 @@ import CoreData
 @objc(Page)
 public class Page: NSManagedObject, Codable {
 
+    let nullInvocation = [0,0,0,0]
+    
+    var invocationClaimTimer: Timer?
+    
     public override func awakeFromInsert() {
         super.awakeFromInsert()
         
@@ -22,7 +26,23 @@ public class Page: NSManagedObject, Codable {
             
             self.addToKeys(key)
         }
+        
+        self.clearInvocation()
     }
+    
+    public override func awakeFromFetch() {
+        super.awakeFromFetch()
+        
+        if self.invocation == nil || self.invocation?.count == 0 {
+            self.clearInvocation()
+            
+        }
+    }
+    
+    func clearInvocation() {
+        self.invocation = nullInvocation
+    }
+    
     
     func rotary(for position: RotaryEncoder.Position) -> RotaryEncoder {
                 
@@ -38,6 +58,19 @@ public class Page: NSManagedObject, Codable {
         self.addToEncoders(encoder)
         
         return encoder
+    }
+    
+    func pendingInvocationChange() {
+        
+        self.objectWillChange.send()
+
+        self.invocationClaimTimer?.invalidate()
+        self.invocationClaimTimer = .scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(claimInvocation), userInfo: nil, repeats: false)
+        
+    }
+    
+    @objc func claimInvocation() {
+        self.configuration?.claim(invocation: self.invocation!, page: self)
     }
     
     //MARK: - Codable

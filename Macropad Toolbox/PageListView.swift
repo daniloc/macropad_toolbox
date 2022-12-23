@@ -8,10 +8,32 @@
 import SwiftUI
 
 struct PageListItem: View {
+    
     @ObservedObject var page: Page
     
     var body: some View {
-        Text(page.name ?? "")
+        
+        HStack {
+            VStack {
+                ForEach((0...page.invocation!.count - 1), id: \.self) { index in
+                    
+                    Group {
+                        
+                        if page.invocation![index] == 0 {
+                            Image(systemName: "square")
+                                .foregroundColor(.secondary)
+                        } else {
+                            Image(systemName: "square.fill")
+                        }
+                    }
+                    .font(.system(size: 6))
+                }
+            }
+            .frame(height: 20)
+            
+            Text(page.name ?? "")
+        }
+        .padding(.vertical, 2)
     }
 }
 
@@ -80,6 +102,8 @@ struct PageListView: View {
                             }
                     } label: {
                         PageListItem(page: page)
+                            .id(page.invocation)
+
                     }
                 }
                 .onDelete(perform: deleteItems)

@@ -22,6 +22,17 @@ public class Configuration: NSManagedObject {
         addToPages(page)
     }
     
+    func claim(invocation: [Int], page: Page) {
+        for page in self.pages?.array as! [Page] {
+            if page.invocation == invocation {
+                page.clearInvocation()
+            }
+        }
+        
+        page.invocation = invocation
+        self.objectWillChange.send()
+    }
+    
     func jsonData() throws -> Data {
         
         guard let pages = pages?.array as? [Page] else {
