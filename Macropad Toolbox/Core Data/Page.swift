@@ -24,14 +24,6 @@ public class Page: NSManagedObject, Codable {
         }
     }
     
-    //MARK: - Codable
-    
-    enum CodingKeys: CodingKey {
-        case name,
-        keys,
-        invocation
-    }
-        
     func rotary(for position: RotaryEncoder.Position) -> RotaryEncoder {
                 
         for storedEncoder in self.encoders?.allObjects as! [RotaryEncoder] {
@@ -46,6 +38,15 @@ public class Page: NSManagedObject, Codable {
         self.addToEncoders(encoder)
         
         return encoder
+    }
+    
+    //MARK: - Codable
+    
+    enum CodingKeys: CodingKey {
+        case name,
+        keys,
+        invocation,
+        rotaryEncoders
     }
 
     public required convenience init(from decoder: Decoder) throws {
@@ -70,8 +71,11 @@ public class Page: NSManagedObject, Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
             
         try container.encodeIfPresent(name, forKey: .name)
-        
         try container.encodeIfPresent(invocation, forKey: .invocation)
+        
+        if let encodersArray = encoders?.allObjects as? [RotaryEncoder] {
+            try container.encode(encodersArray, forKey: .rotaryEncoders)
+        }
 
         if let keysArray = keys?.array as? [Key] {
             try container.encode(keysArray, forKey: .keys)
