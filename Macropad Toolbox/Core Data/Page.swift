@@ -31,6 +31,22 @@ public class Page: NSManagedObject, Codable {
         keys,
         invocation
     }
+        
+    func rotary(for position: RotaryEncoder.Position) -> RotaryEncoder {
+                
+        for storedEncoder in self.encoders?.allObjects as! [RotaryEncoder] {
+            if storedEncoder.position == position {
+                return storedEncoder
+            }
+        }
+        
+        let encoder = RotaryEncoder(context: self.managedObjectContext!)
+        encoder.position = position
+        
+        self.addToEncoders(encoder)
+        
+        return encoder
+    }
 
     public required convenience init(from decoder: Decoder) throws {
         guard let context = decoder.managedObjectContext else {

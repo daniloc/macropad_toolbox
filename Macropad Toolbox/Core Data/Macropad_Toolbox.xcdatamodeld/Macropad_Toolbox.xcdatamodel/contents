@@ -17,9 +17,17 @@
         <relationship name="key" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Key" inverseName="macro" inverseEntity="Key"/>
     </entity>
     <entity name="Page" representedClassName="Page" syncable="YES" codeGenerationType="category">
-        <attribute name="invocation" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
+        <attribute name="invocation" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[Int]"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="configuration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Configuration" inverseName="pages" inverseEntity="Configuration"/>
+        <relationship name="encoders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RotaryEncoder" inverseName="page" inverseEntity="RotaryEncoder"/>
         <relationship name="keys" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Key" inverseName="page" inverseEntity="Key"/>
+    </entity>
+    <entity name="RotaryEncoder" representedClassName="RotaryEncoder" syncable="YES" codeGenerationType="category">
+        <attribute name="positionInt" optional="YES" attributeType="Integer 16" valueTransformerName="NSSecureUnarchiveFromData" defaultValueString="0" usesScalarValueType="YES" customClassName="Position"/>
+        <relationship name="leftTurn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Macro"/>
+        <relationship name="page" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="encoders" inverseEntity="Page"/>
+        <relationship name="press" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Macro"/>
+        <relationship name="rightTurn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Macro"/>
     </entity>
 </model>

@@ -14,6 +14,8 @@ struct PageDetailView: View {
     
     @ObservedObject var page: Page
     @State var selectedKey: Key?
+    @State var selectedRotaryMacro: Macro?
+    @State var groupBoxLabel: String?
     @State var confirmDeleteShown = false
     
     var keys: [Key] {
@@ -33,35 +35,41 @@ struct PageDetailView: View {
         HStack {
             
             VStack {
-            
-            GroupBox("Page Detail") {
                 
-                VStack {
+                GroupBox("Page Detail") {
                     
-                    HStack {
-                        Text("Title:")
-                        TextField("Page title:", text: $page.name ?? "")
-                    }
-                    
-
-                    
-                    LazyVGrid(columns: items) {
+                    VStack {
                         
-                        ReorderableForEach(items: keys) { key in
-                            
-                            KeyGridElementView(key: key, selectedKey: $selectedKey)
-                            
-                        } moveAction: { indices, index in
-                            page.moveKeys(indices: indices, destination: index)
+                        HStack {
+                            Text("Title:")
+                            TextField("Page title:", text: $page.name ?? "")
                         }
+                        
+                        HStack {
+                            RotaryConfigView(encoder: page.rotary(for: .left), selectedMacro: $selectedRotaryMacro, activeEventString: $groupBoxLabel, label: "Left Rotary")
+                            
+                            Spacer()
+                            
+                            RotaryConfigView(encoder: page.rotary(for: .right), selectedMacro: $selectedRotaryMacro, activeEventString: $groupBoxLabel, label: "Right Rotary")
+                        }
+                        .padding(.vertical)
+                        .padding(.horizontal, 2)
+                        
+                        LazyVGrid(columns: items) {
+                            
+                            ReorderableForEach(items: keys) { key in
+                                
+                                KeyGridElementView(key: key, selectedKey: $selectedKey)
+                                
+                            } moveAction: { indices, index in
+                                page.moveKeys(indices: indices, destination: index)
+                            }
+                        }
+
                     }
-                    
-
-
+                    .frame(width: 260)
                     
                 }
-                
-            }
                 Spacer()
                 
                 Button {
@@ -70,41 +78,60 @@ struct PageDetailView: View {
                     Label("Delete \(page.name ?? "Unnamed Page")", systemImage: "trash")
                 }
                 .confirmationDialog("Are you sure you want to delete \(page.name ?? "")?", isPresented: $confirmDeleteShown, actions: {
-
+                    
                     
                     Button("Delete \(page.name ?? "")", role: .destructive) {
                         page.configuration?.deletePage(page)
                     }
                     Button("Cancel", role: .cancel) {
-
+                        
                     }
                 })
                 .buttonStyle(.borderless)
                 .padding(.vertical, 8)
-            
                 
-
+                
+                
                 
             }
             
-            GroupBox("Key details") {
-                if let key = selectedKey {
+            if let key = selectedKey {
+                GroupBox("Key details") {
                     
                     KeyDetailView(key: key)
-                }
                     
-                    Spacer()
-            
+                }
             }
+            
+            if let macro = selectedRotaryMacro, let groupBoxLabel = groupBoxLabel {
+                GroupBox(groupBoxLabel) {
+                    MacroEditView(macro: macro)
+                }
+            }
+            
+            
+            Spacer()
+            
+            
         }
         .padding()
-
+        
         .onAppear {
             selectedKey = keys.first
             viewContext.undoManager = undoManager
         }
+        .onChange(of: selectedKey) { _ in
+            if selectedKey != nil {
+                selectedRotaryMacro = nil
+            }
+        }
+        .onChange(of: selectedRotaryMacro) { _ in
+            if selectedRotaryMacro != nil {
+                selectedKey = nil
+            }
+        }
         
-            
+        
     }
 }
 
