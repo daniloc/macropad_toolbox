@@ -72,6 +72,7 @@ struct PageDetailView: View {
 
                     }
                     .frame(width: 260)
+                    .padding()
                     
                 }
                 Spacer()
@@ -103,6 +104,8 @@ struct PageDetailView: View {
                 GroupBox("Key details") {
                     
                     KeyDetailView(key: key)
+                        .padding(.horizontal)
+
                     
                 }
             }
@@ -110,6 +113,7 @@ struct PageDetailView: View {
             if let macro = selectedRotaryMacro, let groupBoxLabel = groupBoxLabel {
                 GroupBox(groupBoxLabel) {
                     MacroEditView(macro: macro)
+                        .padding(.horizontal)
                 }
             }
             

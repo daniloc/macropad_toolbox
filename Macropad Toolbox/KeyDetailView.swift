@@ -56,7 +56,6 @@ struct KeyDetailView: View {
                 } label: {
                     Label("Reset", systemImage: "clear")
                 }
-                .padding(8)
 
             
             }
