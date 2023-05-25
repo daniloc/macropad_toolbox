@@ -15,30 +15,53 @@ struct ModifierSelectionView: View {
         Array(repeating: .init(.fixed(90), spacing: 3), count: 4)
     }
     
+    func itemLabel(_ content: String) -> some View {
+        Text(content)
+            .font(.system(size: 11, design: .monospaced))
+            .foregroundColor(.primary)
+            .lineLimit(1)
+            .padding(2)
+    }
+    
+    fileprivate func modifierPickerItem(_ keycode: Macro.SpecialKeyInput) -> some View {
+        return ZStack {
+            
+            if macro.specialKeys.contains(keycode) {
+                Color.blue
+            } else {
+                Color.specialKeyBackground
+            }
+            
+            itemLabel(keycode.uiLabel)
+
+        }
+        .onTapGesture {
+            macro.toggleKey(keycode)
+        }
+    }
+    
     var body: some View {
         ScrollView {
             LazyVGrid(columns: items, spacing: 3) {
-                ForEach(AdafruitPythonHIDKeycode.allCases) { keycode in
-                    
-                    ZStack {
+                
+                Section("Media Keys") {
+                    ForEach(AdafruitHIDPythonMediaControlCode.allCases) { keycode in
                         
-                        if macro.specialKeys.contains(keycode) {
-                            Color.blue
-                        } else {
-                            Color.specialKeyBackground
-                        }
-                        
-                        Text(String("\(keycode)"))
-                            .font(.system(size: 11, design: .monospaced))
-                            .foregroundColor(.primary)
-                            .lineLimit(1)
-                            .padding(2)
+                        modifierPickerItem(Macro.SpecialKeyInput.consumerControl(keycode))
+                            .id(Macro.SpecialKeyInput.consumerControl(keycode).id)
                     }
-                    .onTapGesture {
-                        macro.toggleKey(keycode)
-                    }
-                    
                 }
+                
+                Section("Modifier Keys") {
+                    ForEach(AdafruitPythonHIDKeycode.allCases) { keycode in
+                        
+                        modifierPickerItem(Macro.SpecialKeyInput.modifier(keycode))
+                            .id(Macro.SpecialKeyInput.modifier(keycode).id)
+                        
+                    }
+                }
+                
+
             }
         }
     }

@@ -106,9 +106,8 @@ public class Page: NSManagedObject, Codable {
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(invocation, forKey: .invocation)
         
-        if let encodersArray = encoders?.allObjects as? [RotaryEncoder] {
-            try container.encode(encodersArray, forKey: .rotaryEncoders)
-        }
+        let encodersArray = [self.rotary(for: .left), self.rotary(for: .right)]
+        try container.encode(encodersArray, forKey: .rotaryEncoders)
 
         if let keysArray = keys?.array as? [Key] {
             try container.encode(keysArray, forKey: .keys)

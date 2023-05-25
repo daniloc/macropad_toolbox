@@ -10,7 +10,7 @@ import Foundation
 //Ported from https://github.com/adafruit/Adafruit_CircuitPython_HID/blob/main/adafruit_hid/keycode.py
 
 enum AdafruitPythonHIDKeycode: String, CaseIterable, Identifiable {
-
+    
     var id: String {
         return rawValue
     }
@@ -39,7 +39,7 @@ enum AdafruitPythonHIDKeycode: String, CaseIterable, Identifiable {
     DOWN_ARROW  = "0x51",
     UP_ARROW  = "0x52",
     KP_NUMLOCK  = "0x53",
-    KP_FORWARD_SLASH  = "0x54",
+    KP_FWD_SLASH  = "0x54",
     KP_ASTERISK  = "0x55",
     KP_MINUS  = "0x56",
     KP_PLUS  = "0x57",
@@ -88,4 +88,26 @@ enum AdafruitPythonHIDKeycode: String, CaseIterable, Identifiable {
     RIGHT_ALT  = "0xE6",
     RIGHT_CMD  = "0xE7"
     
+}
+
+enum AdafruitHIDPythonMediaControlCode: String, CaseIterable, Identifiable {
+    
+    var id: String {
+        return rawValue
+    }
+    
+    case
+    RECORD = "0xB2",
+    FAST_FWD = "0xB3",
+    REWIND = "0xB4",
+    SCAN_NEXT = "0xB5",
+    SCAN_PREV = "0xB6",
+    STOP = "0xB7",
+    EJECT = "0xB8",
+    PLAY_PAUSE = "0xCD",
+    MUTE = "0xE2",
+    VOLUME_UP = "0xEA",
+    VOLUME_DOWN = "0xE9",
+    BRIGHT_UP = "0x70",
+    BRIGHT_DOWN = "0x6F"
 }

@@ -10,6 +10,18 @@ import SwiftUI
 struct MacroEditView: View {
     @ObservedObject var macro: Macro
     
+    var macroInputEditor: some View {
+        VStack {
+            HStack {
+            Text("Text output:")
+        TextField("Output", text: $macro.textContent ?? "", prompt: Text("Text typed by this key"))
+                
+            }
+                        
+            ModifierSelectionView(macro: macro)
+        }
+    }
+    
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -22,17 +34,13 @@ struct MacroEditView: View {
                     .foregroundColor(.secondary)
             }
             
+            Divider()
+            
+                macroInputEditor
+
             
         
-            HStack {
-            Text("Text output:")
-        TextField("Output", text: $macro.textContent ?? "", prompt: Text("Text typed by this key"))
-                
-            }
-            
-            Text("Special keys:")
-            
-            ModifierSelectionView(macro: macro)
+
             
         }
     }
